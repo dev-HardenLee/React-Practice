@@ -1,19 +1,6 @@
 import React from 'react'
-import { useCountDispatchContext, useCountStateContext } from '../containers/CounterContainer'
 
-const Counter = () => {
-  const { count } = useCountStateContext()
-
-  const dispatch = useCountDispatchContext()
-
-  const onIncrease = () => {
-    dispatch({ type: 'INCREASE', num: 1 })
-  }
-
-  const onDecrease = () => {
-    dispatch({ type: 'DECREASE', num: 1 })
-  }
-
+const Counter = ({ count, onIncrease, onDecrease }) => {
   return (
     <>
       <h2>{count}</h2>

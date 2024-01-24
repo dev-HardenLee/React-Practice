@@ -1,13 +1,17 @@
-import logo from './logo.svg'
 import './App.css'
+
+import { createStore } from 'redux'
+import rootReducer from './modules'
+import { Provider } from 'react-redux'
 import CounterContainer from './containers/CounterContainer'
-import Counter from './components/Counter'
+
+const store = createStore(rootReducer)
 
 function App() {
   return (
-    <CounterContainer>
-      <Counter />
-    </CounterContainer>
+    <Provider store={store}>
+      <CounterContainer />
+    </Provider>
   )
 }
 
